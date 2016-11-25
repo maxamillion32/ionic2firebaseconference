@@ -22,24 +22,22 @@ import { SupportPage } from '../pages/support/support';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
-
 import { AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
-//configuração firebase
-  export const firebaseConfig = {
-      apiKey: "AIzaSyDzxZ9QxegjPBstBmKkDAWiRLT-rEB0d-U",
-      authDomain: "patatitas-1014f.firebaseapp.com",
-      databaseURL: "https://patatitas-1014f.firebaseio.com",
-      storageBucket: "patatitas-1014f.appspot.com",
-      messagingSenderId: "966300156130"
-  };
 
-  const myFirebaseAuthConfig = {
+export const firebaseConfig = {
+        apiKey: "AIzaSyDkV6aNHfmFQ4Z5MX3tWOZkOMZLP0q25w0",
+        authDomain: "exemploionic-9d93a.firebaseapp.com",
+        databaseURL: "https://exemploionic-9d93a.firebaseio.com",
+        storageBucket: "exemploionic-9d93a.appspot.com",
+        messagingSenderId: "671269835445"
+    };
+
+    const myFirebaseAuthConfig = {
     provider: AuthProviders.Password,
     method: AuthMethods.Password
-  }
-  //fim configuração firebase`
-
+    }
+    //fim configuração firebase`
 
 @NgModule({
   declarations: [

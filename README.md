@@ -18,11 +18,11 @@ Passos para execução do projeto
 import { AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
     export const firebaseConfig = {
-    apiKey: "AIzaSyDzxZ9QxegjPBstBmKkDAWiRLT-rEB0d-U",
-        authDomain: "patatitas-1014f.firebaseapp.com",
-        databaseURL: "https://patatitas-1014f.firebaseio.com",
-        storageBucket: "patatitas-1014f.appspot.com",
-        messagingSenderId: "966300156130"
+        apiKey: "AIzaSyDkV6aNHfmFQ4Z5MX3tWOZkOMZLP0q25w0",
+        authDomain: "exemploionic-9d93a.firebaseapp.com",
+        databaseURL: "https://exemploionic-9d93a.firebaseio.com",
+        storageBucket: "exemploionic-9d93a.appspot.com",
+        messagingSenderId: "671269835445"
     };
 
     const myFirebaseAuthConfig = {
