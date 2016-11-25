@@ -6,7 +6,7 @@ import { SignupPage } from '../signup/signup';
 import { TabsPage } from '../tabs/tabs';
 import { UserData } from '../../providers/user-data';
 import { LoginProvider } from '../../providers/login-provider';
-
+import { LoginModel } from '../../model/login-model';
 @Component({
   selector    : 'page-user',
   templateUrl : 'login.html'
@@ -31,7 +31,12 @@ export class LoginPage {
 
     if (form.valid) {
         this.loading.present();
-        this.loginProvider.login(this.login.username, this.login.password)
+
+        var loginModel = new LoginModel();
+        loginModel.setEmail(this.login.username);
+        loginModel.setSenha(this.login.password);
+
+        this.loginProvider.login(loginModel)
           .then((authData) => {
             this.userData.login(authData.uid);
             this.loading.dismiss();

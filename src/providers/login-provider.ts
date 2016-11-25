@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFire, FirebaseListObservable, AuthMethods, AuthProviders} from 'angularfire2';
-import { LoginModel } from './../model/login';
+import { AngularFire, AuthMethods, AuthProviders} from 'angularfire2';
+import { LoginModel } from './../model/login-model';
 @Injectable()
 export class LoginProvider {
 
@@ -8,11 +8,12 @@ export class LoginProvider {
     
   }
 
-  login(email : string, senha : string) : any {
-    return this.af.auth.login({ email: email, password: senha }, {
-        provider: AuthProviders.Password,
-        method: AuthMethods.Password
-    });
+  login(loginModel : LoginModel) : any {
+    return this.af.auth.login( { email: loginModel.getEmail(), 
+                                 password: loginModel.getSenha() }, 
+                               { provider: AuthProviders.Password,
+                                 method: AuthMethods.Password}
+    );
   }
 
   signup(email : string, senha : string) : any {

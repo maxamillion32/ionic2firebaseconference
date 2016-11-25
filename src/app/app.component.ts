@@ -13,6 +13,7 @@ import { SupportPage } from '../pages/support/support';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+import { AngularFire} from 'angularfire2';
 
 export interface PageInterface {
   title: string;
@@ -52,12 +53,13 @@ export class ConferenceApp {
   rootPage: any;
 
   constructor(
-    public events: Events,
-    public userData: UserData,
-    public menu: MenuController,
-    public platform: Platform,
-    public confData: ConferenceData,
-    public storage: Storage
+    public events     : Events,
+    public userData   : UserData,
+    public menu       : MenuController,
+    public platform   : Platform,
+    public confData   : ConferenceData,
+    public storage    : Storage,
+    public af         : AngularFire
   ) {
     // Call any initial plugins when ready
     platform.ready().then(() => {
@@ -104,6 +106,7 @@ export class ConferenceApp {
       // Give the menu time to close before changing to logged out
       setTimeout(() => {
         this.userData.logout();
+        this.af.auth.logout();
       }, 1000);
     }
   }
