@@ -37,3 +37,9 @@ imports: [
     }),
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
+
+
+
+Referências:
+
+https://github.com/angular/angularfire2
