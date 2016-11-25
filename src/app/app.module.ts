@@ -23,6 +23,23 @@ import { SupportPage } from '../pages/support/support';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 
+import { AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
+
+//configuração firebase
+  export const firebaseConfig = {
+      apiKey: "AIzaSyDzxZ9QxegjPBstBmKkDAWiRLT-rEB0d-U",
+      authDomain: "patatitas-1014f.firebaseapp.com",
+      databaseURL: "https://patatitas-1014f.firebaseio.com",
+      storageBucket: "patatitas-1014f.appspot.com",
+      messagingSenderId: "966300156130"
+  };
+
+  const myFirebaseAuthConfig = {
+    provider: AuthProviders.Password,
+    method: AuthMethods.Password
+  }
+  //fim configuração firebase`
+
 
 @NgModule({
   declarations: [
@@ -43,7 +60,10 @@ import { UserData } from '../providers/user-data';
     SupportPage
   ],
   imports: [
-    IonicModule.forRoot(ConferenceApp)
+    IonicModule.forRoot(ConferenceApp, {
+      backButtonText: 'Voltar'
+    }),
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
