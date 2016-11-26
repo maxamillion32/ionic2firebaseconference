@@ -53,6 +53,6 @@ imports: [
 
 ### Referências
 
->[AngularFire2](https://github.com/angular/angularfire2)
->[Ionic Conference Example](https://github.com/driftyco/ionic-conference-app)
->[Firebase Docs](https://firebase.google.com/docs/)
+#[AngularFire2](https://github.com/angular/angularfire2)
+#[Ionic Conference Example](https://github.com/driftyco/ionic-conference-app)
+#[Firebase Docs](https://firebase.google.com/docs/)
