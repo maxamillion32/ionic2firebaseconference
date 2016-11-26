@@ -8,7 +8,7 @@ export class LoginProvider {
     
   }
 
-  login(loginModel : LoginModel) : any {
+  login(loginModel : LoginModel) : firebase.Promise<any> {
     return this.af.auth.login( { email: loginModel.getEmail(), 
                                  password: loginModel.getSenha() }, 
                                { provider: AuthProviders.Password,
@@ -16,7 +16,8 @@ export class LoginProvider {
     );
   }
 
-  signup(email : string, senha : string) : any {
-    return this.af.auth.createUser({ email: email, password: senha }); 
+  signup(loginModel : LoginModel) : firebase.Promise<any> {
+    return this.af.auth.createUser({  email   : loginModel.email, 
+                                      password: loginModel.senha }); 
   }
 }
