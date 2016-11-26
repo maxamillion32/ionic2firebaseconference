@@ -48,6 +48,8 @@ imports: [
 ![alt text](https://github.com/andersonsv/ionic2firebase/blob/master/screenshots/1-criacao%20usuario.png?raw=true)
 
 **1.1 - Criação usuário: **
+![alt text](https://github.com/andersonsv/ionic2firebase/blob/master/screenshots/2-criacao%20usuario.png?raw=true)
+
 
 **1.1 - Criação usuário: **
 
