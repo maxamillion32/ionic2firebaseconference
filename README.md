@@ -51,6 +51,10 @@ imports: [
 
 #![alt text](https://github.com/andersonsv/ionic2firebase/blob/master/screenshots/3-criacao%20usuario.png?raw=true)
 
+**2 - Speakers **
+** Tela de Listagen **
+#![alt text](https://github.com/andersonsv/ionic2firebase/blob/master/screenshots/4-listagem%20simples.png?raw=true)
+
 ### Referências
 
 #[AngularFire2](https://github.com/angular/angularfire2)
