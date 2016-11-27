@@ -23,6 +23,7 @@ import { SupportPage } from '../pages/support/support';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 import { LoginProvider } from '../providers/login-provider';
+import { SpeakerProvider } from '../providers/speaker-provider';
 import { AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
 
@@ -82,6 +83,6 @@ export const firebaseConfig = {
     TutorialPage,
     SupportPage
   ],
-  providers: [ConferenceData, UserData, LoginProvider, Storage]
+  providers: [ConferenceData, UserData, LoginProvider, SpeakerProvider, Storage]
 })
 export class AppModule { }

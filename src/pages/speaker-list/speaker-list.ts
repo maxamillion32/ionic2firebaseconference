@@ -1,26 +1,40 @@
 import { Component } from '@angular/core';
 
-import { ActionSheet, ActionSheetController, Config, NavController } from 'ionic-angular';
+import { ActionSheet, ActionSheetController, Config, NavController, LoadingController } from 'ionic-angular';
 import { InAppBrowser } from 'ionic-native';
-
+import { FirebaseListObservable} from 'angularfire2';
 import { ConferenceData } from '../../providers/conference-data';
 import { SessionDetailPage } from '../session-detail/session-detail';
 import { SpeakerDetailPage } from '../speaker-detail/speaker-detail';
-
+//providers
+import { SpeakerProvider } from '../../providers/speaker-provider';
 
 @Component({
-  selector: 'page-speaker-list',
-  templateUrl: 'speaker-list.html'
+  selector      : 'page-speaker-list',
+  templateUrl   : 'speaker-list.html'
 })
 export class SpeakerListPage {
-  actionSheet: ActionSheet;
-  speakers = [];
 
-  constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public confData: ConferenceData, public config: Config) {}
+  actionSheet       : ActionSheet;
+  speakerList       : FirebaseListObservable<any[]>;
+
+  constructor(public actionSheetCtrl  : ActionSheetController, 
+              public navCtrl          : NavController, 
+              public confData         : ConferenceData, 
+              public config           : Config,
+              public speakerProvider  : SpeakerProvider,
+              public loadingCtrl      : LoadingController) {}
 
   ionViewDidLoad() {
-    this.confData.getSpeakers().subscribe(speakers => {
-      this.speakers = speakers;
+    let loading = this.loadingCtrl.create({
+      content: 'Carregando...',
+      dismissOnPageChange: true
+    });
+    loading.present();
+
+    this.speakerList = this.speakerProvider.listar();
+    this.speakerList.subscribe(x => {
+        loading.dismiss()
     });
   }
 
