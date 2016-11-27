@@ -43,8 +43,8 @@ imports: [
 ````
 
 ## Telas
-### ** 1 - Login**
-### ** 1.1 - Criação usuário: **
+###  1 - Login
+###  1.1 - Criação usuário: 
 
 #![alt text](https://github.com/andersonsv/ionic2firebase/blob/master/screenshots/1-criacao%20usuario.png?raw=true)
 
@@ -52,8 +52,8 @@ imports: [
 
 #![alt text](https://github.com/andersonsv/ionic2firebase/blob/master/screenshots/3-criacao%20usuario.png?raw=true)
 
-### ** 2 - Speakers **
-** Tela de Listagem **
+###  2 - Speakers 
+Tela de Listagem 
 #![alt text](https://github.com/andersonsv/ionic2firebase/blob/master/screenshots/4-listagem%20simples.png?raw=true)
 
 ### Referências
